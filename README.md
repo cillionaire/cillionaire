@@ -16,7 +16,7 @@ Many safeguards are in place to prevent loss of participants' stakes and ensure 
 
 # How to play
 
-1. In myetherwallet.com, go to "Contracts" and enter "cillionaire.eth" (without quotes) into "Contract Address".
+1. In myetherwallet.com, go to "Contracts" and enter "cillionaire.eth" (without quotes; Contract Address is 0x13171fF9F5De1904509F08cdc3b7Ae2087931e43) into "Contract Address".
 It's also on the Kovan testnet under 0x13171fF9F5De1904509F08cdc3b7Ae2087931e43
 
 2. In "ABI / JSON Interface" enter the following:
