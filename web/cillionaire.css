@@ -1,0 +1,11 @@
+.margin-top {
+	margin-top: 1em;
+}
+
+.label {
+	font-variant: petite-caps;
+}
+
+.value {
+	font-weight: 200;
+}

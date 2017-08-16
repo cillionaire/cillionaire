@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Cillionaire</title>
+		
+		<link rel="stylesheet" href="vendor/bootstrap-4.0.0-beta-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="cillionaire.css">
+		
+		<script type="text/javascript" src="vendor/jquery-3.2.1.min.js"></script>
+		<script src="vendor/popper.js-1.12.2/umd/popper.min.js"></script>
+		<script src="vendor/bootstrap-4.0.0-beta-dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="vendor/web3.min.js"></script>
+		<script type="text/javascript" src="cillionaire.js"></script>
+	</head>
+	<body>
+    <div class="container">
+			
+			<div class="row">
+				<div class="col-sm">
+					<h3 class="margin-top">Cillionaire - Let's make a Crypto-Millionaire</h3>
+					Cillionaire is a donation game where each participant contributes the same stake until a pre-defined pot limit is reached. Then, a winner is chosen randomly from the participants. In the event that the game needs to be cancelled, all participants are refunded.<br> The smart contract handles the ETH transfers and enforces the rules. 
+				</div>
+			</div>
+			
+			<div>
+				<div class="row">
+					<div class="col-sm">
+						<h6 class="margin-top">Smart Contract Information</h6>
+					<div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 label">Address</div>
+					<div class="col-sm value" id="contractAddress"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 label">State</div>
+					<div class="col-sm value" id="contractState"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 label">Pot Target</div>
+					<div class="col-sm value" id="contractPotTarget"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 label">Stake</div>
+					<div class="col-sm value" id="contractStake"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 label">Participation Fee</div>
+					<div class="col-sm value" id="contractFee"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 label">Pot</div>
+					<div class="col-sm value" id="contractPot"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 label">#Participants</div>
+					<div class="col-sm value" id="contractParticipants"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 label">Winner</div>
+					<div class="col-sm value" id="contractWinner"></div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
