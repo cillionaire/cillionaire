@@ -2,6 +2,11 @@
 	margin-top: 1em;
 }
 
+.margin-bottom {
+	margin-bottom: 1em;
+}
+
+
 .margin-top-half {
 	margin-top: 0.5em;
 }
@@ -13,8 +18,4 @@ label {
 
 body {
 	font-weight: 300;
-}
-
-.error {
-	color: red;
 }

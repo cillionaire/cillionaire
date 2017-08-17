@@ -46,10 +46,12 @@
 				<div class="row">
 					<div class="col-sm">
 						<h5 class="margin-top">Smart Contract Information</h5>
-					<div>
+					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm error" id="contractError"></div>
+					<div class="col-sm">
+						<div class="alert alert-danger" style="display:none;" id="contractError"></div>
+					</div>
 				</div>
 				<div class="row">
 					<label for="contractAddress" class="col-sm-2">Address</label>
@@ -82,6 +84,28 @@
 				<div class="row">
 					<label for="contractWinner" class="col-sm-2">Winner</label>
 					<div class="col-sm value" id="contractWinner"></div>
+				</div>
+			</div>
+			
+			<div>
+				<div class="row">
+					<div class="col-sm margin-bottom">
+	 					<h5 class="margin-top">Actions</h5>
+						The actions here generate a transaction that will be opened on MyEtherWallet in a new tab/window. There, you can send it using your preferred method of wallet access. If your browser blocks popups the generated URL will be displayed so you can navigate there manually.<br>
+						<b>ATTENTION: Please make sure that you select the correct network in MyEtherWallet!<br>Especially if you act on the Mainnet contract, make sure to select a Mainnet node in MyEtherWallet.</b>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm">
+						<div class="alert alert-danger" style="display:none;" id="actionsError"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm">
+						<button id="btnParticipate" class="btn btn-primary" style="display:none;">Participate</button>
+						<button id="btnWithdraw" class="btn btn-primary margin-top-half" style="display:none;">Withdraw</button>
+						<button id="btnRefund" class="btn btn-primary margin-top-half" style="display:none;">Refund</button>
+					</div>
 				</div>
 			</div>
 			

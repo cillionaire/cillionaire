@@ -16,6 +16,7 @@ $(function () {
 
 async function setNetwork(_network) {
 	$("#loading").css("display", "block");
+	$("#contractError").css("display", "none");
 	clearContractUI();
 	network = _network;
 	web3 = new Web3(new Web3.providers.HttpProvider(network.endpoint));
@@ -28,21 +29,39 @@ async function setNetwork(_network) {
 		console.log(err);
 		clearContractUI();
 		$("#contractError").html(err.message.replace(/(\r\n|\n|\r|\\r|\\n)/gm, "")+"<br>");
+		$("#contractError").css("display", "block");
 	}
 	$("#loading").css("display", "none");
 }
 
 function initUI() {
-	$("#network").change(function() {
-	  var n = $("#network").val();
-	  if (n=="Mainnet (MyEtherApi)") {
+	$("#network").change(onChangeNetwork);
+	$("#btnParticipate").click(onClickParticipate);
+	$("#btnWithdraw").click(onClickWithdraw);
+	$("#btnRefund").click(onClickRefund);
+}
+
+function onChangeNetwork() {
+	var n = $("#network").val();
+	if (n=="Mainnet (MyEtherApi)") {
 		setNetwork(MAIN_MYETHERAPI);
-	  } else if (n=="Mainnet (Infura)") {
+	} else if (n=="Mainnet (Infura)") {
 		setNetwork(MAIN_INFURA);
-	  } else if (n=="Kovan Testnet (Infura)"){
+	} else if (n=="Kovan Testnet (Infura)"){
 		setNetwork(KOVAN);
-	  }
-	});
+	}
+}
+
+function onClickParticipate() {
+	launchMyEtherWalletTransaction(network.address, cillionaire.stake(), cillionaire.participate.getData());
+}
+
+function onClickWithdraw() {
+	alert("withdraw");
+}
+
+function onClickRefund() {
+	alert("refund");
 }
 
 function clearContractUI() {
@@ -54,6 +73,7 @@ function clearContractUI() {
 	$('#contractPot').html("");
 	$('#contractParticipants').html("");
 	$('#contractWinner').html("");
+	showActions(-1);
 }
 
 function updateContractUI() {
@@ -77,7 +97,15 @@ function initState() {
 		case 3: stateString = "REFUND - The game was cancelled. Now, all participants must be refunded, before a new game can start."; break;
 	}
 	$('#contractState').html(stateString);
+	showActions(state);
 }
+
+function showActions(state) {
+	$("#btnParticipate").css("display", state==1 ? "block" : "none");
+	$("#btnWithdraw").css("display", state==0 ? "block" : "none");
+	$("#btnRefund").css("display", state==3 ? "block" : "none");
+}
+
 
 function initParticipants() {
 	var i = 0;
@@ -101,4 +129,21 @@ function etherscanLink(address) {
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function launchMyEtherWalletTransaction(to, valueWei, data) {
+	$("#actionsError").css("display", "none");
+	var gasLimit = web3.eth.estimateGas({
+	    "to": to, 
+	    "data": data,
+		"value": valueWei
+	}) * 2;
+	var url = "https://www.myetherwallet.com/?to="+to+"&value="+valueWei.dividedBy(1E18).toString()+"&data="+data+"&gaslimit="+gasLimit.toString()+"#send-transaction"
+	var win = window.open(url, '_blank');
+	if (win) {
+	    win.focus();
+	} else {
+		$("#actionsError").html("Your browser blocks popups. Please visit MyEtherWallet through the following link:<br><a href='"+url+"'>"+url+"</a>");
+	    $("#actionsError").css("display", "block");
+	}
 }
