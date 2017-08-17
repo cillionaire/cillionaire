@@ -2,11 +2,15 @@
 	margin-top: 1em;
 }
 
-.label {
+.margin-top-half {
+	margin-top: 0.5em;
+}
+
+label {
 	font-variant: petite-caps;
 	font-weight: 400;
 }
 
 body {
-	font-weight: 200;
+	font-weight: 300;
 }

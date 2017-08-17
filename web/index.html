@@ -22,7 +22,19 @@
 			<div class="row">
 				<div class="col-sm">
 					<h3 class="margin-top">Cillionaire - Let's make a Crypto-Millionaire</h3>
-					Cillionaire is a donation game where each participant contributes the same stake until a pre-defined pot limit is reached. Then, a winner is chosen randomly from the participants. In the event that the game needs to be cancelled, all participants are refunded.<br> The smart contract handles the ETH transfers and enforces the rules. 
+					Cillionaire is a donation game where each participant contributes the same stake until a pre-defined pot limit is reached. <br>Then, a winner is chosen randomly from the participants. In the event that the game is cancelled, all participants are refunded.<br> The smart contract handles the ETH transfers and enforces the rules. 
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-2">
+			  	<label for="network" class="margin-top">Select Network:</label>
+				</div>
+				<div class="col-sm-2">
+			  	<select class="form-control margin-top-half" id="network">
+			    	<option>Mainnet</option>
+			    	<option>Kovan Testnet</option>
+			  	</select>
 				</div>
 			</div>
 			
@@ -33,35 +45,35 @@
 					<div>
 				</div>
 				<div class="row">
-					<div class="col-sm-2 label">Address</div>
+					<label for="contractAddress" class="col-sm-2">Address</label>
 					<div class="col-sm value" id="contractAddress"></div>
 				</div>
 				<div class="row">
-					<div class="col-sm-2 label">State</div>
+					<label for="contractState" class="col-sm-2">State</label>
 					<div class="col-sm value" id="contractState"></div>
 				</div>
 				<div class="row">
-					<div class="col-sm-2 label">Pot Target</div>
+					<label for="contractPotTarget" class="col-sm-2">Pot Target</label>
 					<div class="col-sm value" id="contractPotTarget"></div>
 				</div>
 				<div class="row">
-					<div class="col-sm-2 label">Stake</div>
+					<label for="contractStake" class="col-sm-2">Stake</label>
 					<div class="col-sm value" id="contractStake"></div>
 				</div>
 				<div class="row">
-					<div class="col-sm-2 label">Fee</div>
+					<label for="contractFee" class="col-sm-2">Fee</label>
 					<div class="col-sm value" id="contractFee"></div>
 				</div>
 				<div class="row">
-					<div class="col-sm-2 label">Pot</div>
+					<label for="contractPot" class="col-sm-2">Pot</label>
 					<div class="col-sm value" id="contractPot"></div>
 				</div>
 				<div class="row">
-					<div class="col-sm-2 label">#Participants</div>
+					<label for="contractParticipants" class="col-sm-2">#Participants</label>
 					<div class="col-sm value" id="contractParticipants"></div>
 				</div>
 				<div class="row">
-					<div class="col-sm-2 label">Winner</div>
+					<label for="contractWinner" class="col-sm-2">Winner</label>
 					<div class="col-sm value" id="contractWinner"></div>
 				</div>
 			</div>
