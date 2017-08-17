@@ -14,3 +14,7 @@ label {
 body {
 	font-weight: 300;
 }
+
+.error {
+	color: red;
+}

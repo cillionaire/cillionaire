@@ -28,21 +28,28 @@
 			
 			<div class="row">
 				<div class="col-sm-2">
-			  	<label for="network" class="margin-top">Select Network:</label>
+			  	<label for="network" class="margin-top">Select Network</label>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-4">
 			  	<select class="form-control margin-top-half" id="network">
-			    	<option>Mainnet</option>
-			    	<option>Kovan Testnet</option>
+			    	<option>Mainnet (MyEtherApi)</option>
+						<option>Mainnet (Infura)</option>
+			    	<option>Kovan Testnet (Infura)</option>
 			  	</select>
+				</div>
+				<div class="col-sm-1">
+					<div id="loading" class="margin-top" style="display:none;">Loading...</div>
 				</div>
 			</div>
 			
 			<div>
 				<div class="row">
 					<div class="col-sm">
-						<h6 class="margin-top">Smart Contract Information</h6>
+						<h5 class="margin-top">Smart Contract Information</h5>
 					<div>
+				</div>
+				<div class="row">
+					<div class="col-sm error" id="contractError"></div>
 				</div>
 				<div class="row">
 					<label for="contractAddress" class="col-sm-2">Address</label>
