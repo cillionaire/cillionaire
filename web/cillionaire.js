@@ -41,7 +41,6 @@ function initUI() {
 		setNetwork(MAIN_INFURA);
 	  } else if (n=="Kovan Testnet (Infura)"){
 		setNetwork(KOVAN);
-		$("#network").val("Kovan Testnet");
 	  }
 	});
 }
