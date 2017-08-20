@@ -12,6 +12,7 @@ var cillionaire = null;
 $(function () {
 	setNetwork(MAIN_MYETHERAPI);
 	initUI();
+	updatePeriodically();
 });
 
 async function setNetwork(_network) {
@@ -24,6 +25,11 @@ async function setNetwork(_network) {
 	Cillionaire = web3.eth.contract(ABI);
 	cillionaire = Cillionaire.at(network.address);
 	await sleep(2000);
+	update();
+	$("#loading").css("display", "none");
+}
+
+function update() {
 	try {
 		updateContractUI();
 	} catch (err) {
@@ -32,7 +38,13 @@ async function setNetwork(_network) {
 		$("#contractError").html(err.message.replace(/(\r\n|\n|\r|\\r|\\n)/gm, "")+"<br>");
 		$("#contractError").css("display", "block");
 	}
-	$("#loading").css("display", "none");
+}
+
+async function updatePeriodically() {
+	await sleep(60000);
+	//setNetwork(network);
+	update();
+	updatePeriodically();
 }
 
 function initUI() {
