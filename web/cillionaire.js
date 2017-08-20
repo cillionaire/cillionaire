@@ -18,6 +18,7 @@ async function setNetwork(_network) {
 	$("#loading").css("display", "block");
 	$("#contractError").css("display", "none");
 	clearContractUI();
+	showActions(-1);
 	network = _network;
 	web3 = new Web3(new Web3.providers.HttpProvider(network.endpoint));
 	Cillionaire = web3.eth.contract(ABI);
@@ -67,9 +68,11 @@ function onClickRefund() {
 
 function onCheckBalance() {
 	var a = window.prompt("Please enter your wallet address to check your balance");
-	var balanceWei = cillionaire.funds(a);
-	var balanceEth = balanceWei == 0 ? "0" : balanceWei.dividedBy(1E18).toString();
-	alert("Adress " + a + " has a withdrawable balance of " + balanceEth + " ETH");
+	if (a) {
+		var balanceWei = cillionaire.funds(a);
+		var balanceEth = balanceWei == 0 ? "0" : balanceWei.dividedBy(1E18).toString();
+		alert("Adress " + a + " has a withdrawable balance of " + balanceEth + " ETH");
+	}
 }
 
 function clearContractUI() {
@@ -100,7 +103,7 @@ function initState() {
 	var stateString = "Unknown";
 	switch (state) {
 		case 0: stateString = "ENDED - The game is not currently ongoing. The stats below reflect the last game."; break;
-		case 1: stateString = "PARTICIPATION - Participate by sending the required amount of ether (stake) to the contract using the <i>participate()</i> function."; break;
+		case 1: stateString = "PARTICIPATION - Participate by sending the required amount of ether (stake) to the contract using the <i>participate()</i> function (see below)."; break;
 		case 2: stateString = "CHOOSE WINNER - Participation phase is complete. Next step is to draw the winner."; break; 
 		case 3: stateString = "REFUND - The game was cancelled. Now, all participants must be refunded, before a new game can start. Anybody can trigger the refund of the 10 next participants. "; break;
 	}
@@ -110,8 +113,8 @@ function initState() {
 
 function showActions(state) {
 	$("#btnParticipate").css("display", state==1 ? "block" : "none");
-	$("#btnCheckBalance").css("display", "block");
-	$("#btnWithdraw").css("display", "block");
+	$("#btnCheckBalance").css("display", state!=-1 ? "block" : "none");
+	$("#btnWithdraw").css("display", state!=-1 ? "block" : "none");
 	$("#btnRefund").css("display", state==3 ? "block" : "none");
 }
 
