@@ -39,6 +39,7 @@ function initUI() {
 	$("#btnParticipate").click(onClickParticipate);
 	$("#btnWithdraw").click(onClickWithdraw);
 	$("#btnRefund").click(onClickRefund);
+	$("#btnCheckBalance").click(onCheckBalance);
 }
 
 function onChangeNetwork() {
@@ -57,11 +58,18 @@ function onClickParticipate() {
 }
 
 function onClickWithdraw() {
-	alert("withdraw");
+	launchMyEtherWalletTransaction(network.address, 0, cillionaire.withdraw.getData());
 }
 
 function onClickRefund() {
-	alert("refund");
+	launchMyEtherWalletTransaction(network.address, 0, cillionaire.refund.getData(10));
+}
+
+function onCheckBalance() {
+	var a = window.prompt("Please enter your wallet address to check your balance");
+	var balanceWei = cillionaire.funds(a);
+	var balanceEth = balanceWei == 0 ? "0" : balanceWei.dividedBy(1E18).toString();
+	alert("Adress " + a + " has a withdrawable balance of " + balanceEth + " ETH");
 }
 
 function clearContractUI() {
@@ -94,7 +102,7 @@ function initState() {
 		case 0: stateString = "ENDED - The game is not currently ongoing. The stats below reflect the last game."; break;
 		case 1: stateString = "PARTICIPATION - Participate by sending the required amount of ether (stake) to the contract using the <i>participate()</i> function."; break;
 		case 2: stateString = "CHOOSE WINNER - Participation phase is complete. Next step is to draw the winner."; break; 
-		case 3: stateString = "REFUND - The game was cancelled. Now, all participants must be refunded, before a new game can start."; break;
+		case 3: stateString = "REFUND - The game was cancelled. Now, all participants must be refunded, before a new game can start. Anybody can trigger the refund of the 10 next participants. "; break;
 	}
 	$('#contractState').html(stateString);
 	showActions(state);
@@ -102,7 +110,8 @@ function initState() {
 
 function showActions(state) {
 	$("#btnParticipate").css("display", state==1 ? "block" : "none");
-	$("#btnWithdraw").css("display", state==0 ? "block" : "none");
+	$("#btnCheckBalance").css("display", "block");
+	$("#btnWithdraw").css("display", "block");
 	$("#btnRefund").css("display", state==3 ? "block" : "none");
 }
 
@@ -133,17 +142,18 @@ function sleep(ms) {
 
 function launchMyEtherWalletTransaction(to, valueWei, data) {
 	$("#actionsError").css("display", "none");
-	var gasLimit = web3.eth.estimateGas({
+	var gasLimit = Math.round(web3.eth.estimateGas({
 	    "to": to, 
 	    "data": data,
 		"value": valueWei
-	}) * 2;
-	var url = "https://www.myetherwallet.com/?to="+to+"&value="+valueWei.dividedBy(1E18).toString()+"&data="+data+"&gaslimit="+gasLimit.toString()+"#send-transaction"
+	}) * 2.5); // Gas Estimation doesn't work (on Kovan at least), ran out of gas more than once. Set a higher limit than estimated to work around that.
+	var val = valueWei == 0 ? "0" : valueWei.dividedBy(1E18).toString();
+	var url = "https://www.myetherwallet.com/?to="+to+"&value="+val+"&data="+data+"&gaslimit="+gasLimit.toString()+"#send-transaction"
 	var win = window.open(url, '_blank');
 	if (win) {
 	    win.focus();
 	} else {
-		$("#actionsError").html("Your browser blocks popups. Please visit MyEtherWallet through the following link:<br><a href='"+url+"'>"+url+"</a>");
+		$("#actionsError").html("Your browser blocks popups. Please visit MyEtherWallet through the following link:<br><a href='"+url+"' target='_blank'>"+url+"</a>");
 	    $("#actionsError").css("display", "block");
 	}
 }

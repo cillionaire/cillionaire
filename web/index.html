@@ -11,8 +11,8 @@
 		<link rel="stylesheet" href="cillionaire.css">
 		
 		<script type="text/javascript" src="vendor/jquery-3.2.1.min.js"></script>
-		<script src="vendor/popper.js-1.12.2/umd/popper.min.js"></script>
-		<script src="vendor/bootstrap-4.0.0-beta-dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="vendor/popper.js-1.12.2/umd/popper.min.js"></script>
+		<script type="text/javascript" src="vendor/bootstrap-4.0.0-beta-dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="vendor/web3.min.js"></script>
 		<script type="text/javascript" src="cillionaire.js"></script>
 	</head>
@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col-sm">
 					<h3 class="margin-top">Cillionaire - Let's make a Crypto-Millionaire</h3>
-					Cillionaire is a donation game where each participant contributes the same stake until a pre-defined pot limit is reached. <br>Then, a winner is chosen randomly from the participants. In the event that the game is cancelled, all participants are refunded.<br> The smart contract handles the ETH transfers and enforces the rules. 
+					Cillionaire is a donation game built on the Ethereum blockchain in which each participant contributes the same stake until a pre-defined pot limit is reached. <br>Then, a winner is chosen randomly from the participants. In the event that the game is cancelled, all participants are refunded.<br> The Cillionaire smart contract handles the ETH transfers and enforces the rules. <br>Cillionaire's source code is freely available on <a href="https://github.com/cillionaire/cillionaire" target="_blank">GitHub</a>.
 				</div>
 			</div>
 			
@@ -91,8 +91,8 @@
 				<div class="row">
 					<div class="col-sm margin-bottom">
 	 					<h5 class="margin-top">Actions</h5>
-						The actions here generate a transaction that will be opened on MyEtherWallet in a new tab/window. There, you can send it using your preferred method of wallet access. If your browser blocks popups the generated URL will be displayed so you can navigate there manually.<br>
-						<b>ATTENTION: Please make sure that you select the correct network in MyEtherWallet!<br>Especially if you act on the Mainnet contract, make sure to select a Mainnet node in MyEtherWallet.</b>
+						The actions here generate a transaction that will be opened on MyEtherWallet in a new tab/window. There, you can send it using your preferred method of wallet access. If your browser blocks popups the generated URL will be displayed so you can navigate there manually.<br><br>
+						<b>ATTENTION:<br> Please make sure that you select the correct network in MyEtherWallet. Especially if you act on the Mainnet contract, make sure to select a Mainnet node in MyEtherWallet. <br>Also, be sure to check that the transaction's recipient address is that of the Cillionaire contract above.</b>
 					</div>
 				</div>
 				<div class="row">
@@ -103,9 +103,17 @@
 				<div class="row">
 					<div class="col-sm">
 						<button id="btnParticipate" class="btn btn-primary" style="display:none;">Participate</button>
-						<button id="btnWithdraw" class="btn btn-primary margin-top-half" style="display:none;">Withdraw</button>
 						<button id="btnRefund" class="btn btn-primary margin-top-half" style="display:none;">Refund</button>
+						<button id="btnCheckBalance" class="btn btn-primary margin-top-half" style="display:none;">Check balance</button>
+						<button id="btnWithdraw" class="btn btn-primary margin-top-half" style="display:none;">Withdraw</button>You can withdraw your funds (i.e. winnings and refunds, but not stakes of the current game) at any time, but calling the withdraw function if you have no funds will only cost gas. Be sure to check your balance first that doesn't cost any gas.
 					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm margin-bottom">
+ 					<h5 class="margin-top">Donate</h5>
+					If you like Cillionaire, please consider donating some Ether to <a href="https://www.myetherwallet.com/?to=0x3baAdba0dA3f22e5b86581D686a2bDE9a54Aa0b4#send-transaction" target="_blank">0x3baAdba0dA3f22e5b86581D686a2bDE9a54Aa0b4</a>. Thanks!
 				</div>
 			</div>
 			
