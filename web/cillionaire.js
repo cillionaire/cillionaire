@@ -17,7 +17,6 @@ $(function () {
 
 async function setNetwork(_network) {
 	$("#loading").css("display", "block");
-	$("#contractError").css("display", "none");
 	clearContractUI();
 	showActions(-1);
 	network = _network;
@@ -26,10 +25,11 @@ async function setNetwork(_network) {
 	cillionaire = Cillionaire.at(network.address);
 	await sleep(2000);
 	update();
-	$("#loading").css("display", "none");
 }
 
 function update() {
+	$("#loading").css("display", "block");
+	$("#contractError").css("display", "none");
 	try {
 		updateContractUI();
 	} catch (err) {
@@ -38,6 +38,7 @@ function update() {
 		$("#contractError").html(err.message.replace(/(\r\n|\n|\r|\\r|\\n)/gm, "")+"<br>");
 		$("#contractError").css("display", "block");
 	}
+	$("#loading").css("display", "none");
 }
 
 async function updatePeriodically() {
