@@ -16,6 +16,18 @@ Many safeguards are in place to prevent loss of participants' stakes and ensure 
 
 # How to play
 
+## Using Cillionaire Web
+
+Cillionaire Web is a web frontent for the Cillionaire Smart contract. Its purpose is to make the game more accessible and easy to use.
+
+1. Download cillionaire_web_1.0.zip and unzip.
+
+2. Open index.html in your browser. The contract's data is updated every minute.
+
+3. Use the actions to generate MyEtherWallet transactions that you can sign using your preferred method.
+
+## In MyEtherWallet only
+
 1. In myetherwallet.com, go to "Contracts" and enter "cillionaire.eth" (without quotes; Contract Address is 0x4f6fe3bbefdb17e23d6e74a33482413c961569c3) into "Contract Address".
 It's also on the Kovan testnet under 0x13171fF9F5De1904509F08cdc3b7Ae2087931e43
 
