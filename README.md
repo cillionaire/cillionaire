@@ -16,6 +16,14 @@ A number of safeguards are in place to prevent loss of participants' stakes and 
 
 # How to play
 
+## Current game setup
+
+Pot Target: 5 ETH
+
+Stake per participant: 0.5 ETH
+
+Fee: 0 ETH
+
 ## Using Cillionaire Web
 
 Cillionaire Web is a web frontent for the Cillionaire Smart contract. Its purpose is to make the game more accessible and easy to use. To get an idea how it looks, please see screenshot_web_1.0.png.
