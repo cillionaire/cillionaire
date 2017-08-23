@@ -20,7 +20,8 @@ A number of safeguards are in place to prevent loss of participants' stakes and 
 
 Cillionaire Web is a web frontent for the Cillionaire Smart contract. Its purpose is to make the game more accessible and easy to use. To get an idea how it looks, please see screenshot_web_1.0.png.
 
-1. Download cillionaire_web_1.0.zip and unzip.
+1. Download cillionaire_web_1.0.zip and unzip. 
+To download: Click on the zip-file in the file listing above and on the next screen click "Download".
 
 2. Open index.html in your browser. The contract's data is updated every minute.
 
