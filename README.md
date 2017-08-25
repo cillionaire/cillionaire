@@ -26,7 +26,11 @@ Fee: 0 ETH
 
 ## Using Cillionaire Web
 
-Cillionaire Web is a web frontent for the Cillionaire Smart contract. Its purpose is to make the game more accessible and easy to use. To get an idea how it looks, please see screenshot_web_1.0.png.
+Cillionaire Web is a web frontent for the Cillionaire Smart contract. Its purpose is to make the game more accessible and easy to use. It is hosted here:
+
+http://cillionaire.mywebcommunity.org
+
+Alternatively, you can download the web site and run it locally:
 
 1. Download cillionaire_web_1.0.zip and unzip. 
 To download: Click on the zip-file in the file listing above and on the next screen click "Download".
