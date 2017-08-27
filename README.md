@@ -20,7 +20,9 @@ A number of safeguards are in place to prevent loss of participants' stakes and 
 
 Pot Target: 5 ETH
 
-Stake per participant: 0.5 ETH
+Stake per participant: 0.2 ETH
+
+Number of participants: 25
 
 Fee: 0 ETH
 
