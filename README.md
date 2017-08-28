@@ -18,11 +18,11 @@ A number of safeguards are in place to prevent loss of participants' stakes and 
 
 ## Current game setup
 
-Pot Target: 5 ETH
+Pot Target: 0.2 ETH
 
-Stake per participant: 0.2 ETH
+Stake per participant: 0.01 ETH
 
-Number of participants: 25
+Number of participants: 20
 
 Fee: 0 ETH
 
