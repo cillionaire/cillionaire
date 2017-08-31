@@ -19,15 +19,11 @@ A number of safeguards are in place to prevent loss of participants' stakes and 
 
 ## Current game setup
 
-This game is no longer ongoing or maintained.
+This game has been discontinued.
 
 ## Using Cillionaire Web
 
-Cillionaire Web is a web frontent for the Cillionaire Smart contract. Its purpose is to make the game more accessible and easy to use. It is hosted here:
-
-http://cillionaire.mywebcommunity.org
-
-Alternatively, you can download the web site and run it locally:
+You can download the web site and run it locally:
 
 1. Download cillionaire_web_1.0.zip and unzip. 
 To download: Click on the zip-file in the file listing above and on the next screen click "Download".
