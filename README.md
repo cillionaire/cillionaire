@@ -1,3 +1,4 @@
+
 # Cillionaire
 
 Cillionaire (*C*rypto M*illionaire*) is an Ethereum based lottery where people can participate until a pre-defined pot limit is reached. Then, a random participant is chosen to be the winner. This is inspired by a reddit game called _Let's make a millionaire_, where everybody pledges to contribute 1 USD to make someone a millionaire. Cillionaire aims to be a proof of concept of how to implement this game in a transparent, trustless way.
@@ -5,7 +6,7 @@ Cillionaire (*C*rypto M*illionaire*) is an Ethereum based lottery where people c
 Randomness is achieved by XOR'ing the following two numbers:
 - ownerRandomNumber ... a random number supplied by the contract owner and submitted upon `start` as a hash, much like a concealed bid in an auction.
 - minerRandomNumber ... timestamp of the block that contains the last participant's `particpate` transaction.
-Neither can the owner know the minerRandomNumber, nor can the miner know the ownerRandomNumber (unless the owner supplies a breakable hash, e.h. keccak256(1)).
+Neither can the owner know the minerRandomNumber, nor can the miner know the ownerRandomNumber (unless the owner supplies a breakable hash, e.g. keccak256(1)).
 
 A number of safeguards are in place to prevent loss of participants' stakes and ensure fairness:
 - The owner can `cancel`, in which case participants must be refunded. Anyone can invoke the refund function.
@@ -18,13 +19,7 @@ A number of safeguards are in place to prevent loss of participants' stakes and 
 
 ## Current game setup
 
-Pot Target: 0.2 ETH
-
-Stake per participant: 0.01 ETH
-
-Number of participants: 20
-
-Fee: 0 ETH
+This game is no longer ongoing or maintained.
 
 ## Using Cillionaire Web
 
@@ -45,7 +40,7 @@ To download: Click on the zip-file in the file listing above and on the next scr
 
 ## In MyEtherWallet only
 
-1. In myetherwallet.com, go to "Contracts" and enter "cillionaire.eth" (without quotes; Contract Address is 0x4f6fe3bbefdb17e23d6e74a33482413c961569c3) into "Contract Address".
+1. In myetherwallet.com, go to "Contracts" and enter 0x4f6fe3bbefdb17e23d6e74a33482413c961569c3 into "Contract Address".
 It's also on the Kovan testnet under 0x13171fF9F5De1904509F08cdc3b7Ae2087931e43
 
 2. In "ABI / JSON Interface" enter the following:
