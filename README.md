@@ -20,6 +20,7 @@ A number of safeguards are in place to prevent loss of participants' stakes and 
 ## Current game setup
 
 This game has been discontinued.
+See https://github.com/cillionaire/cillionaire2
 
 ## Using Cillionaire Web
 
